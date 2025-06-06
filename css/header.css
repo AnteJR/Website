@@ -1,0 +1,136 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+#main_header {
+    background-color: #121212;
+    color: white;
+    width: 100%;
+    min-height: 60px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Container principal */
+#header_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Div supérieure du header */
+#top_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#site_title {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Div inférieure du header */
+#bot_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    background-color: #1e1e1e;
+}
+
+/* Items du menu */
+.menu_txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.menu_txt a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.menu_txt:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Menu hamburger pour les téléphones */
+#hamburger {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#hamburger div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Changer en X quand il est actif */
+#hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+}
+#hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+#hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Gestion responsive pour téléphones */
+@media (max-width: 768px) {
+    #bot_header {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        background-color: #1e1e1e;
+        width: 100%;
+    }
+
+    #bot_header.active {
+        display: flex;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    .menu_txt {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .menu_txt a {
+        font-size: 1rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+}
