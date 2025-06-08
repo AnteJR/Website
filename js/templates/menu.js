@@ -76,8 +76,6 @@ function appendMenu() {
         const MENU_ATTRS = [
             { attr: 'id', val: `menu_txt_${menu.ref}` },
             { attr: 'class', val: `menu_txt txt_${menu.ref}` },
-            { attr: 'width', val: '200px' },
-            { attr: 'height', val: '75px' },
         ];
 
         const LINK_ATTR = [
