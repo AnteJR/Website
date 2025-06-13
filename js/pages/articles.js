@@ -6,18 +6,6 @@ const PAGE_TEXTS = {
     subtitle: {
         fr: 'Vous trouverez ici une liste des articles que j\'ai écrits, du plus récent au plus ancien.',
         en: 'Here is a list of the articles I wrote, from most recent to oldest.'
-    },
-    button_type: {
-        default: {
-            fr: 'Tous',
-            en: 'All'
-        }
-    },
-    button_age: {
-        default: {
-            fr: 'Les plus récents',
-            en: 'Most recent'
-        }
     }
 }
 
@@ -48,8 +36,8 @@ function appendArticleDiv() {
     ];
 
     const ARTICLE_LIST_DIV_ATTRS = [
-        { attr: 'id', val: 'sub_title_article_list' },
-        { attr: 'class', val: 'sub_title_article_list content_sub_title' }
+        { attr: 'id', val: 'div_article_list' },
+        { attr: 'class', val: 'div_article_list sub-main-div' }
     ];
 
     TITLE.innerHTML = 'Articles';
@@ -142,8 +130,8 @@ function appendListControllers() {
         appendElem(ELEM, AGE_LIST);
     }
 
-    CONTROLLER_BUTTON_TYPE.innerHTML = `${PAGE_TEXTS.button_type.default[SELECTED.LANG]} ↓`;
-    CONTROLLER_BUTTON_AGE.innerHTML = `${PAGE_TEXTS.button_age.default[SELECTED.LANG]} ↓`;
+    CONTROLLER_BUTTON_TYPE.innerHTML = `${ARTICLES_CATEGORIES.find(d => d.ref == SELECTED.LIST_TYPE)[SELECTED.LANG]} ↓`;
+    CONTROLLER_BUTTON_AGE.innerHTML = `${ARTICLES_AGE.find(d => d.ref == SELECTED.LIST_AGE)[SELECTED.LANG]} ↓`;
 
     setAttrs(CONTROLLER_DIV_ATTRS, CONTROLLER_DIV);
     setAttrs(CONTROLLER_TYPE_ATTRS, CONTROLLER_TYPE);
@@ -264,7 +252,7 @@ function displayArticleList(data, firstTime = false) {
         const ARTICLE_IMAGE_ATTRS = [
             { attr: 'id', val: `article-image-${article.file}` },
             { attr: 'class', val: `article-image article-image-${article.file}` },
-            { attr: 'src', val: `../../media/images/${article.file}/ref_pic.png` }
+            { attr: 'src', val: `../../media/images/articles/${article.file}/ref_pic.png` }
         ];
 
         const ARTICLE_DETAILS_ATTRS = [

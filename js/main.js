@@ -6,9 +6,8 @@ const SELECTED = {
 }
 
 const ARTICLES = [
-    { file: 'article-0', name: 'my void article', summ: 'some article i wrote as an example', categories: [1, 7, 8], date: new Date(2024, 11, 1) },
-    { file: 'article-1', name: 'my first article', summ: 'some article i wrote as an example', categories: [1, 7], date: new Date(2025, 1, 1) },
-    { file: 'article-2', name: 'my second article', summ: 'some article i wrote as an example', categories: [2, 6], date: new Date(2025, 2, 2) },
+    // ref, file, name, summ, categories, date
+    { ref: 'pixels-hitman-absolution', file: 'pixels/hitman-absolution', name: 'Hitman: Absolution', summ: 'En parcourant le weekend passé le magasin Steam, je suis tombé devant le nouvel opus de la saga Hitman ...', categories: [3, 6], date: new Date('2016-03-24') },
 ];
 
 const ARTICLES_CATEGORIES = [
